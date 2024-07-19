@@ -9,17 +9,17 @@ const Footer = () => {
             <section>
                 <ul>
                     <li>
-                        <a href="https://facebook.com" target="_blank">
+                        <a href="https://facebook.com" target="_blank" rel="noreferrer">
                             <img src="/imagens/fb.png" alt="" />
                         </a>
                     </li>
                     <li>
-                        <a href="twitter.com" target="_blank">
+                        <a href="twitter.com" target="_blank" rel="noreferrer">
                             <img src="/imagens/tw.png" alt="" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://instagram.com" target="_blank">
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer">
                             <img src="/imagens/ig.png" alt="" />
                         </a>
                     </li>
