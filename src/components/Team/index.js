@@ -4,14 +4,21 @@ import React from 'react'
 import './Team.css'
 
 //Components
-import Colab from '../Colab'
+import Collaborator from '../Collaborator'
+
+//hex to rgba
+import hexToRgba from 'hex-to-rgba';
+
 
 const Team = (props) => {
   return (
-    (props.colabs.length > 0) && <section className='team' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: props.colorSecondary }}>
-      <h3 style={{ borderBottomColor: props.colorPrimary }}>{props.name}</h3>
+    (props.colabs.length > 0) && <section className='team' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(props.color, "0.5") }}>
+      <input type="color" className='color-input' value={props.color} onChange={(e) => props.changeColor(e.target.value, props.id)}/>
+      <h3 style={{ borderBottomColor: props.color }}>{props.name}</h3>
       <div className='colabs'>
-        {props.colabs.map((colab, index) => <Colab key={index} name={colab.name} post={colab.post} image={colab.image} colorPrimary={props.colorPrimary}/>)}
+        {props.colabs.map((colab, index) => {
+          return <Collaborator key={index} collaborator={colab}  color={props.color} removeCollaborator={props.removeCollaborator}/>
+        })}
       </div>
     </section>
   )
